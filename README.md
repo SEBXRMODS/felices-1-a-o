@@ -32,7 +32,7 @@ text-align:center;
 position:relative;
 }
 
-/* Pantalla Inicio */
+/* Inicio */
 
 #inicio{
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
@@ -190,9 +190,9 @@ text-shadow:
 
 <body>
 
-<!-- MÚSICA -->
+<!-- Música -->
 
-<audio id="musica" autoplay loop controls hidden>
+<audio id="musica" loop preload="auto">
 <source src="cancion.mp3" type="audio/mpeg">
 </audio>
 
@@ -221,37 +221,39 @@ Para mi cachetonchita ✨
 </div>
 
 <p>
-Hoy cumplimos 1 año y 3 meses juntos, y sinceramente todavía me cuesta encontrar las palabras exactas para explicarte todo lo que siento por ti.
-Desde que llegaste a mi vida todo cambió para mejor.
-Cada día contigo se siente más bonito, más especial y más feliz.
+Hoy cumplimos 1 año y 3 meses, y la verdad no sé ni por dónde empezar para explicarte todo lo que siento por ti, mi cachetonchita.
+Desde que llegaste a mi vida, todo ha sido diferente, más bonito, más especial.
+Eres esa persona que con solo un mensaje o una sonrisa logra cambiar mi día por completo y hacerme sentir feliz incluso en los momentos difíciles.
 </p>
 
 <p>
-Me encanta absolutamente todo de ti.
-Tus ocurrencias, tu forma de hablar, tu sonrisa, tu manera de hacerme sentir tranquilo y feliz incluso en los días difíciles.
-Eres esa persona que con solo existir logra iluminar mi vida completa.
-</p>
-
-<p>
-Cuando veo Takis rojos pienso en ti, porque sé cuánto te gustan.
-Cuando escucho hablar de caballos paso fino me acuerdo de lo increíble y elegante que eres.
+Me encanta todo de ti, desde las cosas pequeñas hasta las que te hacen única.
+Me gusta pensar en ti cuando veo unos Takis rojos e imaginarte feliz disfrutándolos.
+Me encanta saber que te gustan los caballos paso fino, porque siento que tienen esa elegancia y fuerza que también hay en ti.
 Y hasta algo tan simple como el Tajín me recuerda a ti, porque contigo todo tiene más sabor, más emoción y más vida.
 </p>
 
 <p>
-Gracias por acompañarme durante este tiempo.
-Gracias por escucharme, apoyarme, entenderme y quedarte conmigo incluso cuando las cosas no son perfectas.
-No sabes lo feliz que me hace compartir mi vida contigo.
+Gracias por estar conmigo, por apoyarme, por entenderme y por compartir tantos momentos a mi lado.
+Gracias por escucharme, por hacerme reír y por demostrarme cada día que contigo todo vale la pena.
+No todo es perfecto, pero cuando estoy contigo cualquier problema se siente más pequeño.
 </p>
 
 <p>
-A veces me pongo a pensar en todo lo que hemos vivido juntos y me doy cuenta de que eres una de las mejores cosas que me han pasado.
-Cada recuerdo contigo se queda guardado en mi corazón de una manera muy especial.
+Cada día a tu lado me enseña lo mucho que te amo y lo importante que eres para mí.
+A veces me pongo a pensar en todo lo que hemos vivido juntos durante este año y 3 meses, y sinceramente no cambiaría nada.
+Cada recuerdo contigo se volvió especial para mí: las conversaciones, las risas, los momentos simples y todas esas pequeñas cosas que hacen que nuestra historia sea tan bonita.
 </p>
 
 <p>
-No importa cuánto tiempo pase, siempre voy a seguir eligiéndote a ti.
-Porque contigo aprendí lo que realmente significa amar a alguien de verdad.
+Quiero que sigamos sumando meses, recuerdos y sueños juntos.
+Quiero seguir abrazándote, seguir haciendo recuerdos contigo y seguir construyendo una historia que nunca termine.
+Porque si este 1 año y 3 meses ha sido así de especial, no me imagino todo lo hermoso que todavía nos falta por vivir.
+</p>
+
+<p>
+Y aunque a veces no encuentre las palabras perfectas para demostrarte todo lo que siento, sí tengo claro algo:
+eres una de las mejores cosas que me han pasado en la vida y no quiero perderte jamás.
 </p>
 
 <!-- Fotos -->
@@ -277,13 +279,7 @@ Porque contigo aprendí lo que realmente significa amar a alguien de verdad.
 </div>
 
 <p>
-Quiero seguir creando recuerdos contigo, seguir riéndome contigo y seguir viviendo miles de momentos más a tu lado.
-Porque si este año y 3 meses han sido tan especiales…
-no me imagino lo hermoso que será todo lo que todavía nos falta vivir juntos.
-</p>
-
-<p>
-Te amo muchísimo mi cachetonchita ❤️
+Te amo muchísimo ❤️
 </p>
 
 <button onclick="irVideo()">
@@ -310,15 +306,15 @@ const musica = document.getElementById("musica");
 
 musica.volume = 0.5;
 
-musica.play().catch(()=>{
+musica.play().catch(() => {
 
-alert("Toca la pantalla una vez más para activar la música ❤️");
+alert("Toca la pantalla otra vez para activar la música ❤️");
 
 });
 
 }
 
-/* Video */
+/* Botón final */
 
 function irVideo(){
 

@@ -1,403 +1,376 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para mi cachetonchita ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi cachetonchita ❤️</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    body{
-      font-family: Arial, sans-serif;
-      overflow:hidden;
-      background:black;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .pantalla{
-      width:100vw;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-      position:relative;
-    }
+body{
+font-family:Arial,sans-serif;
+overflow-x:hidden;
+background:black;
+}
 
-    #inicio{
-      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-      color:white;
-    }
+/* Pantallas */
 
-    #carta{
-      background:linear-gradient(135deg,#6a0dad,#b266ff);
-      color:white;
-      display:none;
-      overflow-y:auto;
-      padding:30px;
-      animation:fadeIn 2s ease;
-    }
+.pantalla{
+min-height:100vh;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:relative;
+}
 
-    h1{
-      font-size:70px;
-      animation:latido 1.5s infinite;
-    }
+/* Inicio */
 
-    .nombre-brillante{
-      font-size:35px;
-      font-weight:bold;
-      margin-bottom:20px;
-      animation:brilloTexto 2s infinite alternate;
-    }
+#inicio{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:white;
+}
 
-    .contador{
-      font-size:22px;
-      margin-bottom:20px;
-      font-weight:bold;
-      text-shadow:0 0 10px white;
-      animation:aparecerTexto 2s ease;
-    }
+/* Carta */
 
-    .texto{
-      max-width:700px;
-      line-height:1.8;
-      font-size:20px;
-      animation:aparecerTexto 3s ease;
-    }
+#carta{
+background:linear-gradient(135deg,#6a0dad,#b266ff);
+color:white;
+display:none;
+padding:30px 20px 80px;
+animation:fade 2s ease;
+}
 
-    button{
-      padding:15px 25px;
-      font-size:18px;
-      border:none;
-      border-radius:20px;
-      cursor:pointer;
-      background:white;
-      color:#6a0dad;
-      margin-top:25px;
-      transition:0.3s;
-      box-shadow:0 0 15px rgba(255,255,255,0.6);
-    }
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
 
-    button:hover{
-      transform:scale(1.1);
-      background:#ffd1dc;
-    }
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-    .corazon{
-      position:absolute;
-      color:red;
-      animation:flotar 5s linear infinite;
-    }
+/* Texto */
 
-    .brillo{
-      position:absolute;
-      width:5px;
-      height:5px;
-      background:white;
-      border-radius:50%;
-      animation:brillar 2s infinite alternate;
-    }
+.texto{
+max-width:850px;
+width:100%;
+}
 
-    .galeria{
-      width:100%;
-      max-width:700px;
-      height:350px;
-      margin:25px auto;
-      position:relative;
-      overflow:hidden;
-      border-radius:20px;
-      box-shadow:0 0 25px rgba(255,255,255,0.4);
-    }
+.nombre{
+font-size:42px;
+font-weight:bold;
+margin-bottom:20px;
+animation:brillo 2s infinite alternate;
+}
 
-    .galeria img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      position:absolute;
-      opacity:0;
-      transition:opacity 1.5s ease;
-    }
+.contador{
+font-size:24px;
+margin-bottom:25px;
+text-shadow:0 0 15px white;
+}
 
-    .galeria img.activa{
-      opacity:1;
-    }
+p{
+font-size:22px;
+line-height:1.8;
+margin-bottom:25px;
+}
 
-    @keyframes flotar{
-      0%{
-        transform:translateY(100vh);
-        opacity:1;
-      }
-      100%{
-        transform:translateY(-10vh);
-        opacity:0;
-      }
-    }
+/* Botones */
 
-    @keyframes latido{
-      0%,100%{
-        transform:scale(1);
-      }
-      50%{
-        transform:scale(1.2);
-      }
-    }
+button{
+padding:16px 28px;
+font-size:20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+background:white;
+color:#6a0dad;
+transition:0.3s;
+margin-top:25px;
+box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
 
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
+button:hover{
+transform:scale(1.08);
+background:#ffd1dc;
+}
 
-    @keyframes aparecerTexto{
-      from{
-        opacity:0;
-      }
-      to{
-        opacity:1;
-      }
-    }
+/* Slider */
 
-    @keyframes brillar{
-      from{
-        opacity:0.2;
-        transform:scale(1);
-      }
-      to{
-        opacity:1;
-        transform:scale(2);
-      }
-    }
+.slider{
+width:100%;
+max-width:800px;
+height:550px;
+position:relative;
+margin:40px auto;
+overflow:hidden;
+border-radius:25px;
+box-shadow:0 0 30px rgba(255,255,255,0.4);
+background:black;
+}
 
-    @keyframes brilloTexto{
-      0%{
-        text-shadow:
-          0 0 5px #fff,
-          0 0 10px #ff66cc,
-          0 0 20px #ff66cc;
-      }
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
 
-      100%{
-        text-shadow:
-          0 0 20px #fff,
-          0 0 30px #ff99dd,
-          0 0 40px #ff99dd;
-      }
-    }
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
 
-  </style>
+.slide.activa{
+opacity:1;
+}
+
+/* Corazones */
+
+.corazon{
+position:fixed;
+color:red;
+animation:flotar 5s linear infinite;
+z-index:999;
+pointer-events:none;
+}
+
+@keyframes flotar{
+
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+}
+
+/* Nombre brillante */
+
+@keyframes brillo{
+
+from{
+text-shadow:
+0 0 10px #fff,
+0 0 20px #ff66cc,
+0 0 30px #ff66cc;
+}
+
+to{
+text-shadow:
+0 0 20px #fff,
+0 0 40px #ff99dd,
+0 0 60px #ff99dd;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <!-- Música -->
-<iframe
-  id="musica"
-  width="0"
-  height="0"
-  src=""
-  frameborder="0"
-  allow="autoplay">
-</iframe>
 
-<!-- Pantalla inicial -->
+<audio id="musica" loop preload="auto">
+<source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Pantalla Inicio -->
+
 <div id="inicio" class="pantalla">
 
-  <h1>❤️</h1>
+<h1 style="font-size:80px;">❤️</h1>
 
-  <button onclick="mostrarCarta()">
-    ¿Sabes cuánto te amo?
-  </button>
+<button onclick="mostrarCarta()">
+¿Sabes cuánto te amo?
+</button>
 
 </div>
 
 <!-- Carta -->
+
 <div id="carta" class="pantalla">
 
-  <div class="contador" id="contador"></div>
+<div class="texto">
 
-  <div class="texto">
+<div class="contador" id="contador"></div>
 
-    <div class="nombre-brillante">
-      Para mi cachetonchita ✨
-    </div>
+<div class="nombre">
+Para mi cachetonchita ✨
+</div>
 
-    <p>
-      Hoy cumplimos 1 año y 3 meses, y la verdad no sé ni por dónde empezar para explicarte todo lo que siento por ti, mi cachetonchita.
-      Desde que llegaste a mi vida, todo ha sido diferente, más bonito, más especial.
-      Eres esa persona que con solo un mensaje o una sonrisa logra cambiar mi día por completo.
-    </p>
+<p>
+Hoy cumplimos 1 año y 3 meses, y sinceramente todavía me cuesta encontrar las palabras exactas para explicarte todo lo que siento por ti.
+Desde que llegaste a mi vida todo cambió para mejor. Cada día contigo se siente más bonito, más especial y más feliz.
+</p>
 
-    <br>
+<p>
+Me encanta absolutamente todo de ti. Tus ocurrencias, tu forma de hablar, tu sonrisa y la manera en la que haces que cualquier momento simple se vuelva inolvidable.
+Eres esa persona que logra alegrarme incluso en los días difíciles.
+</p>
 
-    <p>
-      Me encanta todo de ti, desde las cosas pequeñas hasta las que te hacen única.
-      Me gusta pensar en ti cuando veo unos Takis rojos, imaginarte feliz disfrutándolos.
-      Me encanta saber que te gustan los caballos paso fino, porque siento que tienen esa elegancia y fuerza que también hay en ti.
-      Y hasta algo tan simple como el Tajín me recuerda a ti, porque contigo todo tiene más sabor, más emoción.
-    </p>
+<p>
+Cuando veo Takis rojos pienso en ti, porque sé cuánto te gustan.
+Cuando escucho hablar de caballos paso fino me acuerdo de lo increíble y elegante que eres.
+Y hasta el Tajín me recuerda a ti, porque contigo todo tiene más sabor, más emoción y más vida.
+</p>
 
-    <br>
+<p>
+Gracias por acompañarme durante este tiempo, por apoyarme, por escucharme y por hacerme sentir amado.
+No sabes lo feliz que me hace compartir mi vida contigo.
+</p>
 
-    <p>
-      Gracias por estar conmigo, por apoyarme, por entenderme y por compartir tantos momentos a mi lado.
-      No todo es perfecto, pero contigo todo vale la pena.
-      Cada día a tu lado me enseña lo mucho que te amo y lo importante que eres para mí.
-    </p>
+<!-- Fotos -->
 
-    <br>
+<div class="slider">
 
-    <p>
-      Quiero que sigamos sumando meses, recuerdos y sueños juntos.
-      Porque si estos 1 año y 3 meses han sido así de especiales,
-      no me imagino todo lo que nos falta por vivir.
-    </p>
+<div class="slide activa">
+<img src="foto1.jpg">
+</div>
 
-    <!-- GALERÍA -->
-    <div class="galeria">
+<div class="slide">
+<img src="foto2.jpg">
+</div>
 
-      <!-- CAMBIA ESTAS FOTOS -->
-      <img src="foto1.jpg" class="activa">
-      <img src="foto2.jpg">
-      <img src="foto3.jpg">
-      <img src="foto4.jpg">
+<div class="slide">
+<img src="foto3.jpg">
+</div>
 
-    </div>
+<div class="slide">
+<img src="foto4.jpg">
+</div>
 
-    <p>
-      <strong>
-        Te amo mucho ❤️
-      </strong>
-    </p>
+</div>
 
-    <button onclick="irVideo()">
-      ¿Lista para vivir los mejores momentos de tu vida conmigo?
-    </button>
+<p>
+Quiero seguir creando recuerdos contigo, seguir riéndome contigo y seguir viviendo miles de momentos más a tu lado.
+Porque si este año y 3 meses han sido tan especiales… no me imagino lo hermoso que será todo lo que todavía nos falta vivir juntos.
+</p>
 
-  </div>
+<p>
+Te amo muchísimo mi cachetonchita ❤️
+</p>
+
+<button onclick="irVideo()">
+¿Lista para vivir los mejores momentos de tu vida conmigo?
+</button>
+
+</div>
 
 </div>
 
 <script>
 
-  function mostrarCarta(){
+/* Mostrar carta */
 
-    document.getElementById('inicio').style.display = 'none';
+function mostrarCarta(){
 
-    document.getElementById('carta').style.display = 'flex';
+document.getElementById('inicio').style.display='none';
 
-    // Música
-    document.getElementById("musica").src =
-    "https://www.youtube.com/embed/vbHU5vUwS-A?autoplay=1&loop=1&playlist=vbHU5vUwS-A";
+document.getElementById('carta').style.display='flex';
 
-  }
+/* Música */
 
-  function irVideo(){
+const musica = document.getElementById("musica");
 
-    window.location.href =
-    "https://youtu.be/o_ls8ltVFnw?si=JbD_Koz2Tlv8YjNn";
+musica.volume = 0.5;
 
-  }
+musica.play();
 
-  // Corazones
-  function crearCorazones(){
+}
 
-    const corazon = document.createElement('div');
+/* Video final */
 
-    corazon.classList.add('corazon');
+function irVideo(){
 
-    corazon.innerHTML = '❤️';
+window.location.href =
+"https://youtu.be/o_ls8ltVFnw?si=JbD_Koz2Tlv8YjNn";
 
-    corazon.style.left = Math.random()*100 + 'vw';
+}
 
-    corazon.style.fontSize =
-    (Math.random()*20 + 10) + 'px';
+/* Corazones */
 
-    document.body.appendChild(corazon);
+function crearCorazones(){
 
-    setTimeout(()=>{
-      corazon.remove();
-    },5000);
+const corazon=document.createElement('div');
 
-  }
+corazon.classList.add('corazon');
 
-  // Brillos
-  function crearBrillos(){
+corazon.innerHTML='❤️';
 
-    const brillo = document.createElement('div');
+corazon.style.left=Math.random()*100+'vw';
 
-    brillo.classList.add('brillo');
+corazon.style.fontSize=(Math.random()*20+15)+'px';
 
-    brillo.style.left = Math.random()*100 + 'vw';
+document.body.appendChild(corazon);
 
-    brillo.style.top = Math.random()*100 + 'vh';
+setTimeout(()=>{
+corazon.remove();
+},5000);
 
-    document.body.appendChild(brillo);
+}
 
-    setTimeout(()=>{
-      brillo.remove();
-    },2000);
+setInterval(crearCorazones,300);
 
-  }
+/* Contador */
 
-  setInterval(crearCorazones,300);
+function actualizarContador(){
 
-  setInterval(crearBrillos,200);
+const inicio = new Date('2025-02-07T00:00:00');
 
-  // CONTADOR
-  function actualizarContador(){
+const ahora = new Date();
 
-    // CAMBIA ESTA FECHA
-    const inicio =
-    new Date('2025-02-07T00:00:00');
+const diferencia = ahora - inicio;
 
-    const ahora = new Date();
+const dias = Math.floor(diferencia / (1000*60*60*24));
 
-    const diferencia = ahora - inicio;
+const horas = Math.floor((diferencia / (1000*60*60)) % 24);
 
-    const dias =
-    Math.floor(diferencia / (1000*60*60*24));
+const minutos = Math.floor((diferencia / (1000*60)) % 60);
 
-    const horas =
-    Math.floor((diferencia / (1000*60*60)) % 24);
+document.getElementById('contador').innerHTML =
+`💖 Llevamos juntos ${dias} días, ${horas} horas y ${minutos} minutos 💖`;
 
-    const minutos =
-    Math.floor((diferencia / (1000*60)) % 60);
+}
 
-    document.getElementById('contador').innerHTML =
-    `💖 Llevamos juntos ${dias} días, ${horas} horas y ${minutos} minutos 💖`;
+setInterval(actualizarContador,1000);
 
-  }
+actualizarContador();
 
-  setInterval(actualizarContador,1000);
+/* Slider automático */
 
-  actualizarContador();
+const slides = document.querySelectorAll('.slide');
 
-  // GALERÍA
-  const fotos =
-  document.querySelectorAll('.galeria img');
+let actual = 0;
 
-  let fotoActual = 0;
+setInterval(()=>{
 
-  setInterval(()=>{
+slides[actual].classList.remove('activa');
 
-    fotos[fotoActual].classList.remove('activa');
+actual = (actual + 1) % slides.length;
 
-    fotoActual =
-    (fotoActual + 1) % fotos.length;
+slides[actual].classList.add('activa');
 
-    fotos[fotoActual].classList.add('activa');
-
-  },3000);
+},3000);
 
 </script>
 

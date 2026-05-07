@@ -16,6 +16,7 @@ box-sizing:border-box;
 body{
 font-family:Arial,sans-serif;
 overflow-x:hidden;
+overflow-y:auto;
 background:black;
 }
 
@@ -25,11 +26,13 @@ background:black;
 min-height:100vh;
 width:100%;
 display:flex;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
 flex-direction:column;
 text-align:center;
 position:relative;
+padding-top:40px;
+padding-bottom:40px;
 }
 
 /* Inicio */
@@ -37,6 +40,7 @@ position:relative;
 #inicio{
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 color:white;
+justify-content:center;
 }
 
 /* Carta */
@@ -47,6 +51,7 @@ color:white;
 display:none;
 padding:30px 20px 80px;
 animation:fade 2s ease;
+overflow-y:auto;
 }
 
 @keyframes fade{
@@ -87,6 +92,7 @@ p{
 font-size:22px;
 line-height:1.9;
 margin-bottom:25px;
+padding:0 10px;
 }
 
 /* Botones */
@@ -181,6 +187,33 @@ text-shadow:
 0 0 20px #fff,
 0 0 40px #ff99dd,
 0 0 60px #ff99dd;
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.nombre{
+font-size:35px;
+}
+
+p{
+font-size:18px;
+}
+
+.slider{
+height:350px;
+}
+
+button{
+font-size:18px;
+padding:14px 22px;
+}
+
+.contador{
+font-size:18px;
 }
 
 }

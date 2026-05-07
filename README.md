@@ -266,10 +266,10 @@
     <div class="galeria">
 
       <!-- CAMBIA ESTAS FOTOS -->
-      <img src="foto1.jpg" class="activa">
-      <img src="foto2.jpg">
-      <img src="foto3.jpg">
-      <img src="foto4.jpg">
+      <img src="foto 1.jpg" class="activa">
+      <img src="foto 2.jpg">
+      <img src="foto 3.jpg">
+      <img src="foto 4.jpg">
 
     </div>
 

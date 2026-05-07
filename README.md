@@ -16,8 +16,8 @@ box-sizing:border-box;
 body{
 font-family:Arial,sans-serif;
 overflow-x:hidden;
-overflow-y:auto;
 background:black;
+color:white;
 }
 
 /* Pantallas */
@@ -31,15 +31,13 @@ align-items:center;
 flex-direction:column;
 text-align:center;
 position:relative;
-padding-top:40px;
-padding-bottom:40px;
+padding:40px 20px;
 }
 
 /* Inicio */
 
 #inicio{
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-color:white;
 justify-content:center;
 }
 
@@ -47,12 +45,10 @@ justify-content:center;
 
 #carta{
 background:linear-gradient(135deg,#6a0dad,#b266ff);
-color:white;
 display:none;
-padding:30px 20px 80px;
-animation:fade 2s ease;
-overflow-y:auto;
 }
+
+/* Animación */
 
 @keyframes fade{
 
@@ -68,19 +64,16 @@ transform:translateY(0);
 
 }
 
-/* Texto */
-
-.texto{
-max-width:850px;
-width:100%;
-}
+/* Nombre */
 
 .nombre{
 font-size:45px;
 font-weight:bold;
-margin-bottom:20px;
+margin:25px 0;
 animation:brillo 2s infinite alternate;
 }
+
+/* Contador */
 
 .contador{
 font-size:24px;
@@ -88,14 +81,21 @@ margin-bottom:25px;
 text-shadow:0 0 15px white;
 }
 
+/* Texto */
+
+.texto{
+max-width:900px;
+width:100%;
+animation:fade 2s ease;
+}
+
 p{
 font-size:22px;
 line-height:1.9;
-margin-bottom:25px;
-padding:0 10px;
+margin-bottom:30px;
 }
 
-/* Botones */
+/* Botón */
 
 button{
 padding:16px 28px;
@@ -119,14 +119,14 @@ background:#ffd1dc;
 
 .slider{
 width:100%;
-max-width:800px;
-height:550px;
+max-width:850px;
+height:500px;
 position:relative;
-margin:40px auto;
 overflow:hidden;
 border-radius:25px;
 box-shadow:0 0 30px rgba(255,255,255,0.4);
 background:black;
+margin-bottom:40px;
 }
 
 .slide{
@@ -171,7 +171,7 @@ opacity:0;
 
 }
 
-/* Nombre brillante */
+/* Brillo */
 
 @keyframes brillo{
 
@@ -204,7 +204,7 @@ font-size:18px;
 }
 
 .slider{
-height:350px;
+height:320px;
 }
 
 button{
@@ -225,11 +225,11 @@ font-size:18px;
 
 <!-- Música -->
 
-<audio id="musica" loop preload="auto">
+<audio id="musica" loop>
 <source src="cancion.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Pantalla Inicio -->
+<!-- Inicio -->
 
 <div id="inicio" class="pantalla">
 
@@ -245,13 +245,41 @@ font-size:18px;
 
 <div id="carta" class="pantalla">
 
-<div class="texto">
+<!-- FOTOS PRIMERO -->
+
+<div class="slider">
+
+<div class="slide activa">
+<img src="foto1.jpg">
+</div>
+
+<div class="slide">
+<img src="foto2.jpg">
+</div>
+
+<div class="slide">
+<img src="foto3.jpg">
+</div>
+
+<div class="slide">
+<img src="foto4.jpg">
+</div>
+
+</div>
+
+<!-- CONTADOR -->
 
 <div class="contador" id="contador"></div>
+
+<!-- NOMBRE -->
 
 <div class="nombre">
 Para mi cachetonchita ✨
 </div>
+
+<!-- TEXTO -->
+
+<div class="texto">
 
 <p>
 Hoy cumplimos 1 año y 3 meses, y la verdad no sé ni por dónde empezar para explicarte todo lo que siento por ti, mi cachetonchita. Desde que llegaste a mi vida, todo ha sido diferente, más bonito, más especial. Eres esa persona que con solo un mensaje o una sonrisa logra cambiar mi día por completo y hacerme sentir feliz incluso en los momentos difíciles.
@@ -277,37 +305,17 @@ Quiero que sigamos sumando meses, recuerdos y sueños juntos. Quiero seguir abra
 Y aunque a veces no encuentre las palabras perfectas para demostrarte todo lo que siento, sí tengo claro algo: eres una de las mejores cosas que me han pasado en la vida y no quiero perderte jamás.
 </p>
 
-<!-- Fotos -->
-
-<div class="slider">
-
-<div class="slide activa">
-<img src="foto1.jpg">
-</div>
-
-<div class="slide">
-<img src="foto2.jpg">
-</div>
-
-<div class="slide">
-<img src="foto3.jpg">
-</div>
-
-<div class="slide">
-<img src="foto4.jpg">
-</div>
-
-</div>
-
 <p>
 Te amo muchísimo ❤️
 </p>
 
+</div>
+
+<!-- BOTÓN FINAL -->
+
 <button onclick="irVideo()">
 ¿Lista para vivir los mejores momentos de tu vida conmigo?
 </button>
-
-</div>
 
 </div>
 
@@ -321,21 +329,15 @@ document.getElementById('inicio').style.display='none';
 
 document.getElementById('carta').style.display='flex';
 
-/* Música */
-
 const musica = document.getElementById("musica");
 
 musica.volume = 0.5;
 
-musica.play().catch(() => {
-
-alert("Toca la pantalla otra vez para activar la música ❤️");
-
-});
+musica.play();
 
 }
 
-/* Botón final */
+/* Botón */
 
 function irVideo(){
 
@@ -393,7 +395,7 @@ setInterval(actualizarContador,1000);
 
 actualizarContador();
 
-/* Slider automático */
+/* Slider */
 
 const slides = document.querySelectorAll('.slide');
 
